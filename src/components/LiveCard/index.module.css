@@ -1,0 +1,65 @@
+.start {
+    position: relative;
+    overflow: hidden;
+}
+
+.start:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    background: #E3B016;
+    left: 0;
+    top: 0;
+}
+
+.enter {
+    position: relative;
+    overflow: hidden;
+}
+
+.enter:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    background: #52C41A;
+    left: 0;
+    top: 0;
+}
+.continue {
+    position: relative;
+    overflow: hidden;
+}
+
+.continue:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    background: #6078FF;
+    left: 0;
+    top: 0;
+}
+
+.list {
+    position: relative;
+    overflow: hidden;
+}
+
+.list:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    background: #D9D9D9;
+    left: 0;
+    top: 0;
+}
+.boxRight{
+    border-right: 1px solid #c8c7c7;
+}
