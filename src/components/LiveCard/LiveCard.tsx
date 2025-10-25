@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Avatar, Button, Col, Divider, Row, Space, Tooltip} from "antd";
 import styles from "./index.module.css"
-import {DoubleRightOutlined, DownOutlined, MoreOutlined} from "@ant-design/icons";
+import {DoubleRightOutlined, DownOutlined, MoreOutlined, RightOutlined} from "@ant-design/icons";
 import ListTable from "../ListTable";
 import type {ListType} from "../../App.tsx";
 
@@ -79,9 +79,12 @@ const LiveCard: React.FC<LiveCardProps> = ({
                                              onListDelete
                                            }: LiveCardProps) => {
 
+  const [flag,setFlag] = useState<boolean>(false);
+
   const handleMore = () => {
     onMore?.()
   }
+
 
   const handleEnterLive = () => {
     onEnterLive?.()
@@ -94,6 +97,14 @@ const LiveCard: React.FC<LiveCardProps> = ({
     onStartLive?.()
   }
 
+  const handleHide = ()=>{
+    setFlag(true)
+  }
+
+  const handleShow = ()=>{
+    setFlag(false)
+  }
+
   return (
     <div
       className={`
@@ -104,8 +115,8 @@ const LiveCard: React.FC<LiveCardProps> = ({
       py-4 pl-8 pr-8 bg-white rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md`}>
       <Row>
         {liveMode === "list" && <Col span={1} style={{display: 'flex', alignItems: 'center'}}>
-            <Button shape="round" size={"small"}>
-                <DownOutlined/> {/*<RightOutlined />*/}
+            <Button shape="round" size={"small"} style={{textAlign:"center"}}>
+              {flag?<DownOutlined onClick={()=>handleShow()}/>:<RightOutlined onClick={()=>handleHide()}/>}
             </Button>
         </Col>}
         <Col span={6} className={styles.boxRight}>
@@ -174,8 +185,8 @@ const LiveCard: React.FC<LiveCardProps> = ({
           </Space>
         </Col>
       </Row>
-      {liveMode==="list" && <ListTable onListMore={onListMore}
-                                       onListDelete={onListDelete} list={list?list:[]}/>}
+      { (liveMode === "list" && flag) && <ListTable onListMore={onListMore}
+                                                    onListDelete={onListDelete} list={list?list:[]}/>}
     </div>
   );
 };

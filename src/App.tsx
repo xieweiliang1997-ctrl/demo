@@ -34,7 +34,7 @@ function App() {
         </Col>
       </Row>
       <div>
-        <span className={'text-lg'}>进行中</span>
+        <div className={'text-lg mt-0 mb-4'}>进行中</div>
         <LiveCard
           studio="天美"
           game="王者荣耀"
@@ -49,7 +49,7 @@ function App() {
           onMore={() => console.log('更多操作')}
           liveMode={"enter"}
         />
-        <span className={'text-lg'}>进行中</span>
+        <div className={'text-lg mt-7 mb-4'} >暂停中</div>
         <LiveCard
           studio="天美"
           game="王者荣耀"
@@ -64,7 +64,7 @@ function App() {
           onMore={() => console.log('更多操作')}
           liveMode={"continue"}
         />
-        <span className={'text-lg'}>进行中</span>
+        <div className={'text-lg mt-7 mb-4'}>未开始</div>
         <LiveCard
           studio="天美"
           game="王者荣耀"
@@ -79,7 +79,7 @@ function App() {
           onMore={() => console.log('更多操作')}
           liveMode={"start"}
         />
-        <span className={'text-lg'}>进行中</span>
+        <div className={'text-lg mt-7 mb-4'}>历史记录</div>
         <LiveCard
           studio="天美"
           game="王者荣耀"
